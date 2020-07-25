@@ -9,6 +9,27 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" href="css/index.css">
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+             https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
+        <script>
+          // Your web app's Firebase configuration
+          var firebaseConfig = {
+            apiKey: "AIzaSyCB64dHn7EvXpalTu7BOmO2dL1mwoSPDFQ",
+            authDomain: "auth-everything.firebaseapp.com",
+            databaseURL: "https://auth-everything.firebaseio.com",
+            projectId: "auth-everything",
+            storageBucket: "auth-everything.appspot.com",
+            messagingSenderId: "126672265916",
+            appId: "1:126672265916:web:9f27a36ee54a979d8166b9",
+            measurementId: "G-WLP7LLXDG4"
+          };
+          // Initialize Firebase
+          firebase.initializeApp(firebaseConfig);
+        //   firebase.analytics();
+        </script>
         <script src="js/index.js"></script>
     </head>
     <body>
@@ -26,19 +47,19 @@
                         <form class="formContainer">
                             <div class="form-group">
                                 <label for="formGroupExampleInput">Nombre y apellido</label>
-                                <input type="text" class="form-control customInputs" id="formGroupExampleInput" placeholder="Agregar su nombre">
+                                <input type="text" class="form-control customInputs" id="userName" placeholder="Agregar su nombre">
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Correo electrónico</label>
-                                <input type="email" class="form-control customInputs" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="someone@example.com">
+                                <input type="email" class="form-control customInputs" id="userEmail" aria-describedby="emailHelp" placeholder="someone@example.com">
                                 <small id="emailHelp" class="form-text text-muted">Nunca compartiremos tu dirección de correo con nadie más.</small>
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputPassword1">Password</label>
-                                <input type="password" class="form-control customInputs" id="exampleInputPassword1" placeholder="••••••••••••••••">
+                                <input type="password" class="form-control customInputs" id="userPassword" placeholder="••••••••••••••••">
                             </div>
                         </form>
-                        <button class="customButton">Crear usuario</button>
+                        <button class="customButton" onclick="createUser()">Crear usuario</button>
                         <!-- Formulario -->
                     </div>
                 </div>
